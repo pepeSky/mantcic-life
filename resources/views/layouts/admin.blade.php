@@ -21,38 +21,38 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="container">
-        <div class="grid grid-cols-12">
-        <!-- Page Heading -->
-        @if (isset($header))
-            <div class="grid-rows-1 w-full">
-                <header class="bg-blue-500 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            </div>
-        @endif
+    <div>
+        <div class="lg:grid lg:grid-cols-12">
+            <!-- Page Heading -->
+            @if (isset($header))
+                <div class="">
+                    <header class="bg-blue-500 shadow">
+                        <div class="py-6 px-4 sm:px-6 lg:px-8">
+                            {{ $header }}
+                        </div>
+                    </header>
+                </div>
+            @endif
 
-        <!-- Page Aside -->
-        <aside class="inline-block overflow-auto bg-green-400">
-            {{ $slot }}
-        </aside>
+            <!-- Page Aside -->
+            <aside class="bg-green-400 lg:min-h-screen col-span-3">
+                {{ $slot }}
+            </aside>
 
-        <!-- Page Content -->
-        <main class="absolute w-max inline-block ml-4 bg-yellow-700">
-            {{ $main }}
-        </main>
+            <!-- Page Content -->
+            <main class="bg-yellow-700 col-span-9 min-h-screen">
+                {{ $main }}
+            </main>
 
-        <!-- Page Footer -->
-        <footer class="bg-red-400">
+            <!-- Page Footer -->
+            <footer class="bg-red-400 col-span-12">
+                <span>Fotter</span>
+            </footer>
 
-        </footer>
+            @stack('modals')
 
-        @stack('modals')
-
-        @livewireScripts
-    </div>
+            @livewireScripts
+        </div>
     </div>
 </body>
 

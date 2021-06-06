@@ -1,18 +1,18 @@
-<div>
+<div x-data='{ open: true }'>
     <div class="h-auto bg-white">
-        <div class="flex items-center justify-center mt-5">
+        <div class="flex content-center mt-5 justify-between">
 
-            <img class="ml-4 h-6" src="https://premium-tailwindcomponents.netlify.app/assets/svg/tailwindcomponent-dark.svg">
+            <img class="ml-4 h-6"
+                src="https://premium-tailwindcomponents.netlify.app/assets/svg/tailwindcomponent-dark.svg">
 
-            <div class="mx-4">
+            <div class="mx-4" @click='open = !open'>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
             </div>
         </div>
-
-        <nav class="mt-3">
+        <nav class="mt-3" x-show='open'>
             <ul>
                 <li class="px-5 py-3">
                     <div class="flex flex-row items-center h-8">
@@ -412,15 +412,16 @@
                 </li>
             </ul>
 
+            <div class="relative bottom-0 my-8">
+                <a class="flex items-center py-2 px-8 text-gray-700 hover:text-gray-600" href="#">
+                    <img class="h-6 w-6 rounded-full mr-3 object-cover"
+                        src="https://lh3.googleusercontent.com/a-/AOh14Gi0DgItGDTATTFV6lPiVrqtja6RZ_qrY91zg42o-g"
+                        alt="avatar">
+                    <span>Khatabwedaa</span>
+                </a>
+            </div>
+
         </nav>
 
-        <div class="relative bottom-0 my-8">
-            <a class="flex items-center py-2 px-8 text-gray-700 hover:text-gray-600" href="#">
-                <img class="h-6 w-6 rounded-full mr-3 object-cover"
-                    src="https://lh3.googleusercontent.com/a-/AOh14Gi0DgItGDTATTFV6lPiVrqtja6RZ_qrY91zg42o-g"
-                    alt="avatar">
-                <span>Khatabwedaa</span>
-            </a>
-        </div>
     </div>
 </div>
