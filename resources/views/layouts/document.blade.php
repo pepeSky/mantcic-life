@@ -24,23 +24,33 @@
     <body class="font-sans antialiased relative">
         <x-jet-banner />
 
-        <div>
+        <div class="">
             <!-- Header -->
-            <div class="fixed top-0 py-3 px-10 w-full flex justify-between bg-white">
-                <div class="items-center flex justify-center">
-                    <a href="{{ route('dashboard') }}">
+            <div class="fixed top-0  py-3 px-10 w-full flex justify-between bg-white" x-data="{}">
+                <div class="flex justify-between w-96">
+                    <div class="mx-4 lg:hidden" @click="$dispatch('toggle')">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
-                            <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                            <path
-                                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                                d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
-                    </a>
-                    <span class="text-lg font-serif font-medium">ManTcic Life</span>
+                    </div>
+                    <div class="flex">
+                        <a href="{{ route('dashboard') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                            </svg>
+                        </a>
+                        <span class="text-lg font-serif font-medium">ManTcic Life</span>
+                    </div>
+
                 </div>
-                <div class="flex-shrink-0 flex items-center">
+                <div class="flex items-center hidden lg:inline-flex" x-show="open">
                     <div class="mr-5">
                         <input type="text" class="rounded-lg">
                         <x-buttons-border.success />
@@ -52,55 +62,270 @@
 
             </div>
 
-            <div class="flex justify-between">
+            <div class="grid grid-cols-12" x-data="{open: true}">
                 <!-- Aside -->
-                <div class="fixed mt-24 min-h-screen w-64 bg-green-300">
-                    <ul>
-                        <li>Hello world</li>
-                    </ul>
+                <div class="mt-12 overflow-y-auto fixed lg:static bg-green-400 h-80 min-h-screen lg:col-span-2 col-span-3" x-show="open"
+                    x-on:toggle.window="open = !open">
+                    <!-- Responsive Sponsors -->
+                    <aside>
+                        <div class="bg-yellow-700 w-80 h-60 lg:hidden">
+                            <span>Sponsors</span>
+                        </div>
+                        <ul class="mt-12 px-4">
+                            
+                            <li class="nav-dropdown-container ecosystem">
+                                <a class="nav-link">Ecosystem</a><span class="arrow"></span>
+                                <ul class="nav-dropdown">
+                                    <li>
+                                        <h4>Help</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Forum</a></li>
+                                            <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Chat</a></li>
+                                            <li><a href="https://events.vuejs.org/meetups/" class="nav-link"
+                                                    target="_blank" rel="noopener">Meetups</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>Tooling</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link"
+                                                    target="_blank" rel="noopener">Devtools</a></li>
+                                            <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue CLI</a></li>
+                                            <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue Loader</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>Core Libraries</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue Router</a></li>
+                                            <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vuex</a></li>
+                                            <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue Server Renderer</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>News</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://news.vuejs.org" class="nav-link" target="_blank"
+                                                    rel="noopener">Weekly News</a></li>
+                                            <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link"
+                                                    target="_blank" rel="noopener">Roadmap</a></li>
+                                            <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Events</a></li>
+                                            <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank"
+                                                    rel="noopener">Twitter</a></li>
+                                            <li><a href="https://medium.com/the-vue-point" class="nav-link"
+                                                    target="_blank" rel="noopener">Blog</a></li>
+                                            <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link"
+                                                    target="_blank" rel="noopener">Jobs</a></li>
+                                            <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank"
+                                                    rel="noopener">DEV Community</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-dropdown-container ecosystem">
+                                <a class="nav-link">Ecosystem</a><span class="arrow"></span>
+                                <ul class="nav-dropdown">
+                                    <li>
+                                        <h4>Help</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Forum</a></li>
+                                            <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Chat</a></li>
+                                            <li><a href="https://events.vuejs.org/meetups/" class="nav-link"
+                                                    target="_blank" rel="noopener">Meetups</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>Tooling</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link"
+                                                    target="_blank" rel="noopener">Devtools</a></li>
+                                            <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue CLI</a></li>
+                                            <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue Loader</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>Core Libraries</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue Router</a></li>
+                                            <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vuex</a></li>
+                                            <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue Server Renderer</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>News</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://news.vuejs.org" class="nav-link" target="_blank"
+                                                    rel="noopener">Weekly News</a></li>
+                                            <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link"
+                                                    target="_blank" rel="noopener">Roadmap</a></li>
+                                            <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Events</a></li>
+                                            <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank"
+                                                    rel="noopener">Twitter</a></li>
+                                            <li><a href="https://medium.com/the-vue-point" class="nav-link"
+                                                    target="_blank" rel="noopener">Blog</a></li>
+                                            <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link"
+                                                    target="_blank" rel="noopener">Jobs</a></li>
+                                            <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank"
+                                                    rel="noopener">DEV Community</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-dropdown-container ecosystem">
+                                <a class="nav-link">Ecosystem</a><span class="arrow"></span>
+                                <ul class="nav-dropdown">
+                                    <li>
+                                        <h4>Help</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://forum.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Forum</a></li>
+                                            <li><a href="https://chat.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Chat</a></li>
+                                            <li><a href="https://events.vuejs.org/meetups/" class="nav-link"
+                                                    target="_blank" rel="noopener">Meetups</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>Tooling</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://github.com/vuejs/vue-devtools" class="nav-link"
+                                                    target="_blank" rel="noopener">Devtools</a></li>
+                                            <li><a href="https://cli.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue CLI</a></li>
+                                            <li><a href="https://vue-loader.vuejs.org" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue Loader</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>Core Libraries</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue Router</a></li>
+                                            <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vuex</a></li>
+                                            <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Vue Server Renderer</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4>News</h4>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="https://news.vuejs.org" class="nav-link" target="_blank"
+                                                    rel="noopener">Weekly News</a></li>
+                                            <li><a href="https://github.com/vuejs/vue/projects/6" class="nav-link"
+                                                    target="_blank" rel="noopener">Roadmap</a></li>
+                                            <li><a href="https://events.vuejs.org/" class="nav-link" target="_blank"
+                                                    rel="noopener">Events</a></li>
+                                            <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank"
+                                                    rel="noopener">Twitter</a></li>
+                                            <li><a href="https://medium.com/the-vue-point" class="nav-link"
+                                                    target="_blank" rel="noopener">Blog</a></li>
+                                            <li><a href="https://vuejobs.com/?ref=vuejs" class="nav-link"
+                                                    target="_blank" rel="noopener">Jobs</a></li>
+                                            <li><a href="https://dev.to/t/vue" class="nav-link" target="_blank"
+                                                    rel="noopener">DEV Community</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </aside>
                 </div>
 
                 <!-- Main -->
-                <div class="-left-1/2 left-50 pt-24 min-h-screen">
-                    <div class="card bg-white py-3 px-5 rounded-xl flex flex-col mb-5">
-                        <div class="title text-xl font-medium">Border</div>
-                        <div class="w-full py-3">
-                            <div class="inline-block mr-2 mt-2">
-                                <button type="button"
-                                    class="focus:outline-none text-blue-600 text-sm py-2.5 px-5 rounded-md border border-blue-600 hover:bg-blue-50">Primary</button>
-                            </div>
-                            <div class="inline-block mr-2 mt-2">
-                                <button type="button"
-                                    class="focus:outline-none text-gray-600 text-sm py-2.5 px-5 rounded-md border border-gray-600 hover:bg-gray-50">Secondary</button>
-                            </div>
-                            <div class="inline-block mr-2 mt-2">
-                                <button type="button"
-                                    class="focus:outline-none text-green-600 text-sm py-2.5 px-5 rounded-md border border-green-600 hover:bg-green-50">Success</button>
-                            </div>
-                            <div class="inline-block mr-2 mt-2">
-                                <button type="button"
-                                    class="focus:outline-none text-red-600 text-sm py-2.5 px-5 rounded-md border border-red-600 hover:bg-red-50">Danger</button>
-                            </div>
-                            <div class="inline-block mr-2 mt-2">
-                                <button type="button"
-                                    class="focus:outline-none text-yellow-600 text-sm py-2.5 px-5 rounded-md border border-yellow-600 hover:bg-yellow-50">Warning</button>
-                            </div>
-                            <div class="inline-block mr-2 mt-2">
-                                <button type="button"
-                                    class="focus:outline-none text-gray-800 text-sm py-2.5 px-5 rounded-md border border-gray-800 hover:bg-gray-200">Dark</button>
-                            </div>
-                        </div>
+                <div class="mt-12 py-1 col-span-12 lg:col-span-8 overflow-y-auto sm:overflow-y-auto">
+                    <div class="card bg-white py-3 px-5 flex flex-col mb-5">
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu eros sapien. Curabitur vel
+                            est ipsum. Nulla fermentum posuere rutrum. Curabitur rhoncus ut velit vel feugiat. Mauris id
+                            sapien urna. Cras convallis enim ex, et commodo purus sagittis ac. Curabitur vel ante ut
+                            arcu pellentesque aliquam nec sed nibh. Sed tellus erat, dapibus ac suscipit ut, condimentum
+                            ut erat.
+
+                            Integer feugiat eleifend porttitor. Quisque quis hendrerit metus. Etiam pellentesque
+                            malesuada porttitor. Suspendisse eu sagittis tortor. Vestibulum a nunc eu tellus finibus
+                            viverra sit amet a neque. Praesent in fringilla neque, posuere sodales tellus. Ut tristique
+                            commodo pulvinar. Fusce tristique purus eget sem facilisis, vel efficitur purus euismod.
+                            Donec ornare, metus in sollicitudin tincidunt, lacus lectus pharetra ex, in dictum velit
+                            ligula non nibh. Nullam convallis erat eu turpis tempor, nec porttitor massa molestie. Sed
+                            odio massa, mollis nec tincidunt nec, pellentesque at leo. Quisque magna est, varius sit
+                            amet mattis ac, hendrerit vitae mi. Vestibulum iaculis suscipit ex sed blandit. Vivamus sit
+                            amet maximus tortor. Integer et mollis lacus.
+
+                            Duis lacus lacus, mollis ut enim et, tincidunt molestie lorem. Mauris at consequat nunc,
+                            vitae viverra tellus. Ut congue ut nisi vel lacinia. Proin laoreet sed mi ut pharetra. Nam
+                            blandit facilisis massa, in elementum lacus. Donec eleifend eros tortor, vel faucibus lectus
+                            molestie ac. Phasellus ut lorem a turpis tincidunt ultricies. Maecenas ac facilisis lorem,
+                            non ornare magna.
+
+                            Fusce efficitur iaculis enim. Nullam aliquam ipsum commodo ex hendrerit maximus. Praesent
+                            tincidunt, risus sodales fringilla volutpat, tortor leo maximus tellus, sit amet cursus
+                            nulla ipsum vitae quam. Duis sit amet erat maximus, vestibulum nulla eget, volutpat neque.
+                            Maecenas quis metus imperdiet, fringilla tortor sed, posuere magna. Integer tristique at
+                            lorem ac eleifend. Donec scelerisque nisl at interdum mattis. Morbi tempus ultrices turpis
+                            at gravida. Phasellus rhoncus justo ac felis vehicula, vitae fermentum leo lobortis. Sed non
+                            nulla velit. Sed condimentum nibh sed metus scelerisque, vel lobortis lorem viverra. Quisque
+                            convallis mi erat, non suscipit lorem semper convallis. In dignissim mi id neque cursus
+                            sodales. Pellentesque luctus magna urna, non porttitor leo scelerisque ac. Curabitur tempor
+                            risus massa, id venenatis tellus dictum a.
+
+                            Integer vestibulum ligula eget maximus lacinia. Curabitur elit dolor, facilisis nec
+                            condimentum eget, pellentesque hendrerit nisl. Donec fringilla mattis turpis quis faucibus.
+                            Integer at mi tortor. Curabitur felis augue, condimentum eget lorem sit amet, pellentesque
+                            ullamcorper quam. Donec sollicitudin molestie scelerisque. Nam imperdiet, dolor at feugiat
+                            scelerisque, nunc ipsum elementum neque, nec vestibulum orci dui a arcu. Mauris sapien
+                            lectus, pharetra vel scelerisque ac, pulvinar eget sapien</span>
                     </div>
                 </div>
-                
-                <div class="bg-yellow-700 w-80">
+
+        
+                <!-- Sponsor -->
+                <div class="bg-yellow-700 w-80 min-h-screen cols-span-2 lg:block hidden">
                     <span>Sponsors</span>
                 </div>
 
             </div>
 
-            <!-- Footer -->
-            <div class="h-28 w-full bg-purple-500 ">Footer</div>
+       
         </div>
 
         @stack('modals')
