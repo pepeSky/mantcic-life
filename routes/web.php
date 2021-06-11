@@ -33,3 +33,11 @@ Route::resource('units',UnitController::class)->names('web.units');
 Route::resource('processes',ProcessController::class)->names('web.processes');
 
 Route::resource('reports',ReportController::class)->names('web.reports');
+
+Route::get("/test-admin", function() {
+    return view("admin");
+});
+
+Route::get("/test-doc", function() {
+    return view("layouts.document");
+});
