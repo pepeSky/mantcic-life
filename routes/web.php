@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\Site\InputController;
-use App\Http\Controllers\Site\ProcessController;
-use App\Http\Controllers\Site\ReportController;
-use App\Http\Controllers\Site\UnitController;
-
+use App\Http\Controllers\Mantenance\WelcomeController;
+use App\Http\Controllers\Welcome\ServicesController;
+use App\Http\Controllers\Welcome\StoreController;
+use App\Http\Livewire\ServiceStatus;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,26 +19,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', WelcomeController::class)->name('welcome');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/welcome', WelcomeController::class)->name('welcome.services');
 
-Route::resource('inputs',InputController::class)->names('web.inputs');
+Route::get('services', [ServicesController::class, 'index'])->name('services.index');
 
-Route::resource('units',UnitController::class)->names('web.units');
+Route::get('store', [StoreController::class, 'index'])->name('store.index');
 
-Route::resource('processes',ProcessController::class)->names('web.processes');
+Route::get('services/{service}', [ServicesController::class, 'show'])->name('services.show');
 
-Route::resource('reports',ReportController::class)->names('web.reports');
+Route::post('services/{service}/enrolled',[ServicesController::class,'enrolled'])->middleware('auth')->name('services.enrolled');
 
-Route::get("/test-admin", function() {
-    return view("admin");
-});
+Route::get('services-status/{service}',ServiceStatus::class)->name('services.status');
 
-Route::get("/test-doc", function() {
-    return view("layouts.document");
-});

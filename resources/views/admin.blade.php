@@ -1,9 +1,14 @@
 <x-admin-layout>
-    {{-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <x-slot name="header">
+        <div class="flex flex-row">
+            <div class="-mt-4">
+                <x-jet-application-mark/>
+            </div>
+        <h2 class="m-5 py-2 font-semibold text-xl align-middle text-gray-800 leading-tight">
             manTcic Life - "Manteniendo el ciclo de Vida"
         </h2>
-    </x-slot> --}}
+        </div>
+    </x-slot>
 
     <div>
         <div>
