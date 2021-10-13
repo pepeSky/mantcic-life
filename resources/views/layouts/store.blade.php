@@ -28,7 +28,7 @@
     <x-jet-banner />
 
     <div class="min-h-screen bg-gray-100">
-        @livewire('welcome-header')
+        @livewire('dashboard.store.navigation-menu')
 
         <!-- Page Heading -->
         @if (isset($header))

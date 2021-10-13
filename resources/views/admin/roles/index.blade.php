@@ -11,14 +11,14 @@
     @if (session('info'))
     <div class="alert alert-primary" role="alert">
         <strong>Exito!!!</strong> {{ session('info') }}
-    </div>        
+    </div>
     @endif
 
 
     <div class="card">
 
         <div class="card-header">
-            <a class="btn btn-primary"href="{{route('admin.roles.create')}}">Crear Servicio</a>
+            <a class="btn btn-primary"href="{{route('admin.roles.create')}}">Crear Role</a>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -46,11 +46,11 @@
                                 </form>
                             </td>
                         </tr>
-                        
+
                     @empty
                         <tr>
                             <td colspan="4">No hay ningun rol registrado</td>
-                        </tr>                        
+                        </tr>
                     @endforelse
                 </tbody>
             </table>

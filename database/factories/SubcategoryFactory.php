@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Subcategory;
+use App\Models\GestionPpSky\Subcategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SubcategoryFactory extends Factory

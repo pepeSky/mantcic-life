@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Platform;
+use App\Models\Mantenance\Platform;
 use Illuminate\Database\Seeder;
 
 class PlatformSeeder extends Seeder

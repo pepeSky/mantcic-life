@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Goal;
+use App\Models\Mantenance\Goal;
 use Faker\Guesser\Name;
 use Illuminate\Database\Seeder;
 

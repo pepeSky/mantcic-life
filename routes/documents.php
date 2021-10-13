@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Document\DocumentController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Welcome\DocumentationController;
 
 
-Route::get('/',[DocumentController::class, 'index'])->name('documents.home');
+Route::get('/',[DocumentationController::class, 'index'])->name('documents.home');

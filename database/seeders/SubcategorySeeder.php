@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Subcategory;
+use App\Models\GestionPpSky\Subcategory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -15,153 +15,123 @@ class SubcategorySeeder extends Seeder
      */
     public function run()
     {
-        $subcategories =[
-            [
-                'category_id' => 1,
-                'name' => 'Celulares y smartphones',
-                'slug' => Str::slug('Celulares y smartphones'),
+        Subcategory::create([
+            'name' => 'Casa',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'casa',
+            'category_id' => '1'
+        ]);
 
+        Subcategory::create([
+            'name' => 'Departamento',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'departamento',
+            'category_id' => '1'
+        ]);
 
-            ],
-            [
-                'category_id' => 1,
-                'name' => 'Accesorios para celulares',
-                'slug' => Str::slug('Accesorios para celulares'),
+        Subcategory::create([
+            'name' => 'Habitación',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'habitacion',
+            'category_id' => '1'
+        ]);
 
-            ],
-            [
-                'category_id' => 1,
-                'name' => 'smartwatches',
-                'slug' => Str::slug('smartwatches'),
+        Subcategory::create([
+            'name' => 'Residencial Tipo A',
+            'adjective' =>'Edificio con alta cantidad de departamentos, o edificios en los cuales sus dueños ostentan de un buen patrimonio',
+            'slug' =>'residencial-tipo-a',
+            'category_id' => '2'
+        ]);
 
-            ],
+        Subcategory::create([
+            'name' => 'Residencial Tipo B',
+            'adjective' =>'Edificios con cantidad promedio de departamentos, en el cual sus dueños no recurrieron a servicios sociales para su adquisicion',
+            'slug' =>'residencial-tipo-b',
+            'category_id' => '2'
+        ]);
 
-            // TV y Audio
+        Subcategory::create([
+            'name' => 'Residencial Tipo C',
+            'adjective' =>'Edificios con baja cantidad de departamentos o de tipo social',
+            'slug' => 'residencial-tipo-c',
+            'category_id' => '2'
+        ]);
 
-            [
-                'category_id' => 2,
-                'name' => 'TV y Video',
-                'slug' => Str::slug('TV y Video'),
-                'features' => true,
-                'dimensions' => true
-            ],
-            [
-                'category_id' => 2,
-                'name' => 'Audios',
-                'slug' => Str::slug('Audios'),
-                'features' => true,
-                'dimensions' => true
-            ],
-            [
-                'category_id' => 2,
-                'name' => 'Audio para Autos',
-                'slug' => Str::slug('Audio para Autos'),
-                'features' => true,
-                'dimensions' => true
-            ],
+        Subcategory::create([
+            'name' => 'Comercial Tipo A',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'comercial-tipo-a',
+            'category_id' => '2'
+        ]);
 
-            // Consola y Video Juego
+        Subcategory::create([
+            'name' => 'Comercial Tipo B',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'comercial-tipo-b',
+            'category_id' => '2'
+        ]);
 
-            [
-                'category_id' => 3,
-                'name' => 'Xbox',
-                'slug' => Str::slug('Xbox'),
-                'features' => true,
-                'dimensions' => true
-            ],
+        Subcategory::create([
+            'name' => 'Obrero Tipo A',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'obrero-tipo-a',
+            'category_id' => '5'
+        ]);
 
-            [
-                'category_id' => 3,
-                'name' => 'Play Station',
-                'slug' => Str::slug('Play Station'),
-                'features' => true,
-                'dimensions' => true
-            ],
+        Subcategory::create([
+            'name' => 'Obrero Tipo B',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'obrero-tipo-b',
+            'category_id' => '5'
+        ]);
 
-            [
-                'category_id' => 3,
-                'name' => 'Video Juego Pc',
-                'slug' => Str::slug('Video Juego Pc'),
-                'features' => true,
-                'dimensions' => true
-            ],
+        Subcategory::create([
+            'name' => 'Obrero Tipo C',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'obrero-tipo-c',
+            'category_id' => '5'
+        ]);
 
-            [
-                'category_id' => 3,
-                'name' => 'Nintendo',
-                'slug' => Str::slug('Nintendo'),
-                'features' => true,
-                'dimensions' => true
-            ],
+        Subcategory::create([
+            'name' => 'Técnico Tipo A',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'tecnico-tipo-a',
+            'category_id' => '5'
+        ]);
 
-            //Computacion
+        Subcategory::create([
+            'name' => 'Técnico Tipo B',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'tecnico-tipo-b',
+            'category_id' => '5'
+        ]);
 
-            [
-                'category_id' => 4,
-                'name' => 'Portatiles',
-                'slug' => Str::slug('Portaltiles'),
-                'features' => true,
-                'dimensions' => true
-            ],
-            [
-                'category_id' => 4,
-                'name' => 'Pc Escritorio',
-                'slug' => Str::slug('Pc Escritorio'),
-                'features' => true,
-                'dimensions' => true
-            ],
-            [
-                'category_id' => 4,
-                'name' => 'Almacenamiento',
-                'slug' => Str::slug('Almacenamiento'),
-                'features' => true,
-                'dimensions' => true
-            ],
-            [
-                'category_id' => 4,
-                'name' => 'Accesorios Computacionales',
-                'slug' => Str::slug('Accesorios Computacionales'),
-                'features' => true,
-                'dimensions' => true
-            ],
+        Subcategory::create([
+            'name' => 'Técnico Tipo C',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'tecnico-tipo-c',
+            'category_id' => '5'
+        ]);
 
-            // Modas
+        Subcategory::create([
+            'name' => 'Profesional Tipo A',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'profesional-tipo-a',
+            'category_id' => '5'
+        ]);
 
-            [
-                'category_id' => 5,
-                'name' => 'Mujeres',
-                'slug' => Str::slug('Mujeres'),
-                'features' => true,
-                'dimensions' => true
-            ],
+        Subcategory::create([
+            'name' => 'Profesional Tipo B',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'profesional-tipo-b',
+            'category_id' => '5'
+        ]);
 
-            [
-                'category_id' => 5,
-                'name' => 'Hombres',
-                'slug' => Str::slug('Hombres'),
-                'features' => true,
-                'dimensions' => true
-            ],
-
-            [
-                'category_id' => 5,
-                'name' => 'Lentes',
-                'slug' => Str::slug('Lentes'),
-                'features' => true,
-                'dimensions' => true
-            ],
-            [
-                'category_id' => 5,
-                'name' => 'Reloj',
-                'slug' => Str::slug('Reloj'),
-                'features' => true,
-                'dimensions' => true
-            ],
-
-        ];
-
-        foreach ($subcategories as $subcategory) {
-            Subcategory::factory(1)->create($subcategory);
-        }
+        Subcategory::create([
+            'name' => 'Profesional Tipo C',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'profesional-tipo-c',
+            'category_id' => '5'
+        ]);
     }
 }

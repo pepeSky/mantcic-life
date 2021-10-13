@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Image;
-use App\Models\Service;
+use App\Models\Mantenance\Image;
+use App\Models\Mantenance\Service;
 use Faker\Provider\Lorem;
 use Illuminate\Database\Seeder;
 
@@ -42,6 +42,7 @@ class ServiceSeeder extends Seeder
             'slug' => 'correctivo',
             'user_id' => '1'
         ]);
+
 
         Service::create([
             'title' => 'Servicios Emergencia',
@@ -122,6 +123,15 @@ class ServiceSeeder extends Seeder
             'description' => 'kjgcjyrxtjezxryejtxkytdckyu',
             'status' => '1', //Borrador
             'slug' => 'servicios-informatica-y-diseño',
+            'user_id' => '1'
+        ]);
+
+        Service::create([
+            'title' => 'Servicios de Salud Integral',
+            'subtitle' => 'Te ayudamos a controlar los estados de tú salud en el transcurso del ciclo de vida, para que puedas brindar una mayor tranquilidad a tu familia y seres queridos',
+            'description' => 'kjgcjyrxtjezxryejtxkytdckyu',
+            'status' => '1', //Borrador
+            'slug' => 'servicios-de-salud-integral',
             'user_id' => '1'
         ]);
 

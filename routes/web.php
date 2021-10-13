@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Mantenance\WelcomeController;
+use App\Http\Controllers\Welcome\WelcomeController;
 use App\Http\Controllers\Welcome\ServicesController;
 use App\Http\Controllers\Welcome\StoreController;
+use App\Http\Controllers\Welcome\ContactController;
 use App\Http\Livewire\ServiceStatus;
 use Illuminate\Support\Facades\Route;
 
@@ -25,11 +26,16 @@ Route::get('/welcome', WelcomeController::class)->name('welcome.services');
 
 Route::get('services', [ServicesController::class, 'index'])->name('services.index');
 
-Route::get('store', [StoreController::class, 'index'])->name('store.index');
-
 Route::get('services/{service}', [ServicesController::class, 'show'])->name('services.show');
 
 Route::post('services/{service}/enrolled',[ServicesController::class,'enrolled'])->middleware('auth')->name('services.enrolled');
 
 Route::get('services-status/{service}',ServiceStatus::class)->name('services.status');
+
+Route::get('stores', [StoreController::class, 'index'])->name('stores.index');
+
+Route::get('reports', [ReportController::class, 'index'])->name('reports.index');
+
+Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+
 

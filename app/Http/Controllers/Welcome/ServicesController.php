@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Welcome;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Service;
+use App\Models\Mantenance\Service;
 
 class ServicesController extends Controller
 {
     public function index(){
-        return view('services.index');
+        return view('welcome.services.index');
     }
 
     public function show(Service $service){
@@ -22,7 +22,7 @@ class ServicesController extends Controller
                             ->get();
 
 
-        return view('services.show', compact('service','services'));
+        return view('welcome.services.show', compact('service','services'));
     }
 
     public function enrolled(Service $service){

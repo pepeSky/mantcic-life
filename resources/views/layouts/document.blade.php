@@ -22,15 +22,15 @@
     </head>
 
     <body class="font-sans antialiased relative">
-        
+
         <div class="min-h-screen bg-gray-100">
-            @livewire('welcome-header')
+            @livewire('welcome.navigation-menu')
         </div>
 
         <main >
             {{ $slot }}
         </main>
-        
+
         @stack('modals')
 
         @livewireScripts

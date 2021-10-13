@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use App\Models\Activity;
-use App\Models\Module;
+use App\Models\Mantenance\Activity;
+use App\Models\Mantenance\Module;
 use App\Observers\ActivityObserver;
 use App\Observers\ModuleObserver;
 

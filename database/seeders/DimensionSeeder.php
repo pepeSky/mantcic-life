@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Builder;
-use App\Models\Product;
+use App\Models\Store\Product;
 
 class DimensionSeeder extends Seeder
 {

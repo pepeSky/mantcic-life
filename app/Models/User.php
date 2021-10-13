@@ -2,6 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Mantenance\Activity;
+use App\Models\Mantenance\Comment;
+use App\Models\Mantenance\Profile;
+use App\Models\Mantenance\Reaction;
+use App\Models\Mantenance\Review;
+use App\Models\Mantenance\Service;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -62,7 +68,7 @@ class User extends Authenticatable
     ];
 
     // Relación uno a uno
-    
+
     public function profile(){
         return $this->hasOne(Profile::class);
     }

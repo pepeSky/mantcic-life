@@ -1,9 +1,9 @@
 @props(['service'])
 
 <article class="card">
-    <img class="h-36 w-full object-cover" src="{{ Storage::url($service->image->url) }}" alt="">
+    <img class="h-36 w-full object-cover" src="" alt="">
     <div class="card-body">
-        <h1 class="card-title">{{ Str::limit($service->name, 40) }}</h1>
+        <h1 class="card-title">{{ Str::limit($service->title, 40) }}</h1>
         <p class="text-gray-500 text-sm mb-2">Responsable: {{ $service->worker->name }}</p>
 
         <div clas="flex">

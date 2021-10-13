@@ -2,11 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\Product;
-use App\Models\Subcategory;
+use App\Models\Store\Product;
+use App\Models\GestionPpSky\Subcategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Brand;
+use App\Models\Store\Brand;
 
 class ProductFactory extends Factory
 {

@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Reaction;
+use App\Models\Mantenance\Reaction;
 
 class CreateReactionsTable extends Migration
 {
@@ -18,7 +18,7 @@ class CreateReactionsTable extends Migration
             $table->id();
 
             $table->enum('value', [Reaction::LIKE, Reaction::DISLIKE]);
-            
+
             $table->unsignedBigInteger('user_id');
 
             $table->unsignedBigInteger('reactionable_id');

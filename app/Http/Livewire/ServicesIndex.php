@@ -4,19 +4,19 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-use App\Models\Service;
-use App\Models\Category;
-use App\Models\Level;
+use App\Models\Mantenance\Service;
+use App\Models\GestionPpSky\Category;
+use App\Models\Mantenance\Level;
 use Livewire\WithPagination;
 
 class ServicesIndex extends Component
 {
     use WithPagination;
-    
+
     public $category_id;
     public $service_id;
     public $level_id;
-    
+
     public function render()
     {
         $categories = Category::all();

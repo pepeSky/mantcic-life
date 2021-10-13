@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Service;
+use App\Models\Mantenance\Service;
 use Livewire\Component;
 
 class Search extends Component

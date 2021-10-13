@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Brand;
+use App\Models\Store\Brand;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BrandFactory extends Factory

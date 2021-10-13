@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Activity;
+use App\Models\Mantenance\Activity;
 use Illuminate\Database\Seeder;
 
 class ActivitySeeder extends Seeder

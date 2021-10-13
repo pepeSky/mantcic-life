@@ -23,7 +23,7 @@
         <x-jet-banner/>
 
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+            @livewire('dashboard.navigation-menu')
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -47,6 +47,6 @@
         @isset($js)
             {{$js}}
         @endisset
-        
+
     </body>
 </html>

@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Activity;
-use App\Models\Service;
+use App\Models\Mantenance\Activity;
+use App\Models\Mantenance\Service;
 use Livewire\Component;
 
 class ServiceStatus extends Component
@@ -29,7 +29,7 @@ class ServiceStatus extends Component
 
     public function changeActivity(Activity $activity){
         $this->current = $activity;
-        
+
     }
 
     public function getIndexProperty(){

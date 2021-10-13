@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Price;
+use App\Models\Mantenance\Price;
 use Illuminate\Database\Seeder;
 
 class PriceSeeder extends Seeder
@@ -34,6 +34,6 @@ class PriceSeeder extends Seeder
             'value' => 3,
         ]);
 
-        
+
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Brand;
-use App\Models\Category;
+use App\Models\Store\Brand;
+use App\Models\GestionPpSky\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -16,72 +16,69 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-      Category::create([
+        Category::create([
             'name' => 'Domiciliario',
+            'adjective' =>'Contrucciones destinadas a la vivienda',
+            'slug' => 'domiciliario',
+            'sector_id' => '6' //UnSe
         ]);
 
         Category::create([
             'name' => 'Edificios',
+            'adjective' =>'Edificios Residenciales',
+            'slug' => 'edificios',
+            'sector_id' => '6'
         ]);
 
         Category::create([
             'name' => 'Empresas',
+            'adjective' =>'Empresas u Edificios de uso Comercial',
+            'slug' => 'empresas',
+            'sector_id' => '6'
         ]);
 
         Category::create([
             'name' => 'Instituciones',
+            'adjective' =>'kjbjhvujvug',
+            'slug' => 'instituciones',
+            'sector_id' => '6'
         ]);
 
         Category::create([
-            'name' => 'Persona Natural',
+            'name' => 'Proveedores',
+            'adjective' =>'Usuarios destinados a proveer materiales e insumos',
+            'slug' => 'proveedores',
+            'sector_id' => '8'
         ]);
 
         Category::create([
-            'name' => 'Persona Juridica Simple', // 3 individuos familiares
+            'name' => 'Personal',
+            'adjective' =>'Usuarios del sistema que son trabajadores directos',
+            'slug' => 'personal',
+            'sector_id' => '7'
+        ]);
+
+
+        Category::create([
+            'name' => 'Campo',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'campo',
+            'sector_id' => '1'
         ]);
 
         Category::create([
-            'name' => 'Persona Juridica Compuesta',
+            'name' => 'Forestal',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'forestal',
+            'sector_id' => '1'
         ]);
 
         Category::create([
-            'name' => 'Persona Juridica Capitales',
+            'name' => 'Industrial',
+            'adjective' =>'jhbsjvdjgvdkhvkb',
+            'slug' => 'industrial',
+            'sector_id' => '2'
         ]);
-
-        $categories = [
-            [
-                'name' => 'Celulares y Tablets',
-                'slug' => Str::slug('Celulares y tablets'),
-                'icon' => '<i class="fab fa-500px"></i>',
-            ],
-
-            [
-                'name' => 'TV, Audio y Video',
-                'slug' => Str::slug('TV, Audio y Video'),
-                'icon' => '<i class="fab fa-500px"></i>',
-            ],
-
-            [
-                'name' => 'Computación',
-                'slug' => Str::slug('Computación'),
-                'icon' => '<i class="fab fa-500px"></i>',
-            ],
-
-            [
-                'name' => 'Moda',
-                'slug' => Str::slug('moda'),
-                'icon' => '<i class="fab fa-500px"></i>',
-            ],
-        ];
-
-        foreach ($categories as $category){
-                $category = Category::factory(1)->create($category)->first();
-
-                $brands = Brand::factory(20)->create();
-
-                foreach ($brands as $brand){
-                    $brand->categories()->attach($category->id);
-                }
-        }
     }
+
 }

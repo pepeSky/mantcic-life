@@ -19,7 +19,7 @@ class ServicePolicy
     {
         //
     }
-
+/*
     public function enrolled(User $user, Service $service){
         return  $service->jobs->contains($user->id);
 
@@ -50,4 +50,5 @@ class ServicePolicy
             return false;
         }
     }
+    */
 }

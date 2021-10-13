@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Store\ProductController;
+use App\Http\Controllers\Dashboard\Store\StoreController;
 
-route::redirect('', 'store/products');
+route::redirect('', 'store/services');
 
-route::resource('/products', ProductController::class)->names('products');
+route::resource('/services', StoreController::class)->names('services');
 
 ?>

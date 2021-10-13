@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Service;
+use App\Models\Mantenance\Service;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,13 +16,13 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            
+
             $table->string('title');
             $table->string('slug');
             $table->string('subtitle');
             $table->text('description');
             $table->enum('status', [Service::DRAFT, Service::REVIEW, Service::PUBLISHED])->default(Service::DRAFT);
-            
+
 
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('level_id')->nullable();

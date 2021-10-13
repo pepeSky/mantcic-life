@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'manTcic Life',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -225,22 +225,14 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
-        [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
-        ],
-        [
-            'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
 
-        // Sidebar items
+        ['header' => 'SITIOS'],
+
+         /*** PANEL ADMINISTRACION ***/
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Blog',
+            'route'  => 'welcome',
+            'icon' => 'fas fa-blog fa-fw',
         ],
         [
             'text'  => 'Panel Control',
@@ -248,6 +240,91 @@ return [
             'icon'  => 'fas fa-fw fa-tachometer-alt',
             'can'   => 'Ver Panel Control'
         ],
+
+        ['header' => 'GESTION CICLOS VIDA'],
+
+             /*** VARIABLES ***/
+        [
+            'text' => 'Variables',
+            'icon' => 'fas fa-user-tie fa-fw',
+            'submenu' =>
+            [
+                [
+                    'url'  => 'admin/factoresMacros',
+                    'text' => 'Factores Macro', //Factores Externos
+                    'icon' => 'fa-fw fab fa-battle-net',
+
+                ],
+
+                [
+                    'url'  => 'admin/factoresMicros',
+                    'text' => 'Factores Micro', //Factores Internos
+                    'icon' => 'fa-fw fab fa-battle-net',
+
+                ],
+
+                [
+                    'url'  => 'admin/factoresPoliticos',
+                    'text' => 'Factores Politicos',  //Factores Sociales
+                    'icon' => 'fa-fw fab fa-battle-net',
+
+                ],
+            ],
+        ],
+
+            /*** CONSTANTES ***/
+        [
+            'text' => 'Constantes', // Sistema = estructructura
+            'icon' => 'fas fa-user-tie fa-fw',
+            'submenu' =>
+            [
+                [
+                    'route'  => 'admin.sciences.index',
+                    'text' => 'Ciencias', // Realidad = Ciencia = Foco = Modelo toma los puntos y los transforma
+                    //<i class="fas fa-th-large"></i>
+                    'icon' => 'fa-fw fab fa-battle-net',
+
+                ],
+
+                [
+                    'route'  => 'admin.branches.index',
+                    'text' => 'Ramas', // Realidad = Ciencia = Foco = Modelo toma los puntos y los trasnforma
+                    //<i class="fas fa-th-large"></i>
+                    'icon' => 'fa-fw fab fa-battle-net',
+
+                ],
+
+                [
+                    'route'  => 'admin.sectors.index',
+                    'text' => 'Sectores', // Sistema Internacional = Elementos o areas = variables
+                    //<i class="fab fa-sith"></i>
+                    //<i class="fab fa-centos"></i>
+                    'icon' => 'fab fa-centos fa-fw',
+                ],
+
+                [
+                    'text' => 'Categorías', // Segmentos = perimetro = observador las ordena
+                    'route'  => 'admin.categories.index',
+                    'icon' => 'fas fa-cubes fa-fw',
+                ],
+
+                [
+                    'text' => 'Subcategorías', // Usuario individualiza creando una unidad o un punto
+                    'url'  => 'admin/subcategories',
+                    //<i class="fas fa-puzzle-piece"></i>
+                    'icon' => 'fas fa-puzzle-piece fa-fw',
+
+                ],
+
+                [
+                    'text' => 'Etiquetas', // Muestra contenido relacionado con el contenido
+                    'route'  => 'admin.tags.index',
+                    'icon' => 'far fa-fw fa-bookmark',
+                    //'can'  => 'admin.tags.index'
+                ],
+            ],
+        ],
+
         [
             'text'   => 'Lista de Roles',
             'route'  => 'admin.roles.index',
@@ -263,52 +340,189 @@ return [
             'active' => ['admin/users*'],
         ],
 
-        ['header' => 'OPCIONES SERVICIOS'],
-        [
-            'text' => 'Pendientes Aprobación',
-            'route'  => 'admin.services.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+        ['header' => 'MODULOS SISTEMA'],
+
+         // Administración
+         [
+            'text'    => 'Administración',
+            'icon'    => 'fas fa-fw fa-address-card',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Recursos',
+                    'url'  => '',
+                    'icon' => 'fas fa-fw fa-home',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
+                    'text' => 'Planificación',
+                    'url'  => '',
+                    'icon' => 'fas fa-fw fa-building',
+                ],
+                [
+                    'text' => 'Actividades',
+                    'url'  => '',
+                    'icon' => 'fas fa-fw fa-industry',
+                ],
+            ],
+        ],
+          // Contabilidad
+          [
+            'text'    => 'Contabilidad',
+            'icon'    => 'fas fa-cash-register fa-fw',
+            'submenu' => [
+                [
+                    'text' => 'Libro Diario',
+                    'url'  => '',
+                    'icon' => 'fas fa-exchange-alt fa-fw',
+                ],
+                [
+                    'text' => 'Libro Mayor',
+                    'url'  => '',
+                    'icon' => 'fas fa-bullseye fa-fw',
+                ],
+                [
+                    'text' => 'Balances',
+                    'url'  => '',
+                    'icon' => 'fas fa-chart-pie fa-fw',
+                ],
+                [
+                    'text' => 'Categorías',
+                    'url'  => '',
+                    'icon' => 'fab fa-fw fa-buffer',
+                ],
+            ],
+        ],
+           // Mantenimiento
+           [
+            'text'    => 'Mantenimiento',
+            'icon'    => 'fas fa-fw fa-tools',
+            'submenu' => [
+                [
+                    'text' => 'Activos',
+                    'url'  => '',
+                    'icon' => 'fas fa-hdd fa-fw',
+                ],
+                [
+                    'text' => 'Bitacoras',
+                    'url'  => '',
+                    'icon' => 'fas fa-file-medical-alt fa-fw',
+                ],
+                [
+                    'text' => 'Actividades',
+                    'url'  => '',
+                    'icon' => 'fas fa-list-ol fa-fw',
                     'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
+                        ['text' => 'Pendientes Aprobación',
+                        'url' => 'admin.service.index',
+                        'icon' => 'fas fa-list-ol fa-fw'
                             ],
-                        ],
                     ],
                 ],
+            ],
+        ],
+          // Almacen
+          [
+            'text'    => 'Almacen',
+            'icon'    => 'fas fa-warehouse fa-fw',
+            'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Artículos',
+                    'url'  => 'admin/articulos',
+                    'icon' => 'fas fa-cubes fa-fw'
+                ],
+                [
+                    'text' => 'Movimientos',
+                    'url'  => 'admin/stocks',
+                    'icon' => 'fas fa-feather fa-fw',
+                ],
+                [
+                    'text' => 'Inventarios',
+                    'url'  => 'admin/inventarios',
+                    'icon' => 'fas fa-toolbox fa-fw',
+                ],
+            ],
+        ],
+        // Ventas
+        [
+            'text'    => 'Ventas',
+            'icon'    => 'fas fa-store fa-fw',
+            'submenu' => [
+                [
+                    'text' => 'Solicitudes',
+                    'url'  => 'admin/solicitudes',
+                    'icon' => 'fas fa-clipboard-list fa-fw',
+                ],
+                [
+                    'text' => 'Presupuestos',
+                    'url'  => 'admin/presupuestos',
+                    'icon' => 'fas fa-calculator fa-fw',
+                ],
+                [
+                    'text' => 'Campañas',
+                    'url'  => 'admin/campañas',
+                    'icon' => 'fas fa-shopping-cart fa-fw',
+                ],
+            ],
+        ],
+           // Blog
+           [
+            'text'    => 'Blog',
+            'icon'    => 'fas fa-blog fa-fw',
+            'submenu' => [
+                /*    [
+                    'text'   => 'Sistemas Aprendizaje',
+                    'url'    => 'admin/blog/cursos',
+                    'icon'   => 'fa-fw fab fa-battle-net',
+                ],
+                [
+                    'text'   => 'Sistemas Gestión',
+                    'url'    => 'admin/blog/gestion',
+                    'icon'   => 'fa-fw fab fa-battle-net',
+                ],
+                [
+                    'text'   => 'Sistemas Activos',
+                    'url'    => 'admin/blog/mantenimiento',
+                    'icon'   => 'fa-fw fab fa-battle-net',
+                ],
+                */
+                [
+                    'text'   => 'Lista Post',
+                    'url'    => 'admin/entradas',
+                    'icon'   => 'far fa-clipboard fa-fw',
+                    //'can'  => 'admin.entradas.index'
+                ],
+                [
+                    'text' => 'Crear Post',
+                    'url'  => 'admin/entradas/create',
+                    'icon' => 'far fa-file fa-fw',
+                    //'can'  => 'admin.usuarios.create'
+                ],
+            ],
+        ],
+
+        // Diseño
+        [
+            'text'    => 'Diseño',
+            'icon'    => 'fas fa-chess fa-fw',
+            'submenu' => [
+                [
+                    'text' => 'Elementos UI',
+                    'url'  => 'admin/elementosUI',
+                    'icon' => 'far fa-chart-line fa-fw',
+                ],
+                [
+                    'text' => 'Activos Físicos',
+                    'url'  => 'admin/couser/cienc-salud',
+                    'icon' => 'far fa-heartbeat fa-fw',
+                ],
+                [
+                    'text' => 'Colores',
+                    'url'  => 'admin/couser/cienc-socia-human',
+                    'icon' => 'far fa-share-alt fa-fw',
+                ],
+                [
+                    'text' => 'Contenedores',
+                    'url'  => 'admin/couser/cienc-biolo-agrop',
+                    'icon' => 'far fa-globe-americas fa-fw',
                 ],
             ],
         ],

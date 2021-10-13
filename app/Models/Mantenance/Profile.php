@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models\Mantenance;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Profile extends Model
+{
+    use HasFactory;
+    protected $guarded = ['id'];
+
+    // Relación uno a uno Inversa
+
+    public function profile(){
+        return $this->belongsTo(User::class);
+    }
+}

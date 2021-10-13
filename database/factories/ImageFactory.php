@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Image;
+use App\Models\Mantenance\Image;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ImageFactory extends Factory
@@ -22,9 +22,10 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
-            'url' => 'services/' . $this->faker->image('storage/app/public/services', 640, 480, null, false),
+            'url' => 'public/storage/web/services' . $this->faker->image('services', 640, 480, null, false),
 
-            'url' => 'products/' . $this->faker->image('storage/app/public/stores/products', 640, 480, null, false),
+            'url' => 'public/storage/stores/products' . $this->faker->image('products', 640, 480, null, false),
+
         ];
     }
 }

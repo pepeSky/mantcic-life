@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Module;
+use App\Models\Mantenance\Module;
 use Illuminate\Database\Seeder;
 
 class ModuleSeeder extends Seeder
@@ -99,6 +99,6 @@ class ModuleSeeder extends Seeder
             'service_id' => '4'
         ]);
 
-        
+
     }
 }

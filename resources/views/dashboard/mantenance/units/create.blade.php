@@ -1,0 +1,22 @@
+<x-app-layout>
+    <div class="container py-8">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-2xl font-bold">Crear Unidad</h1>
+
+                <hr class="mt-2 mb-6">
+
+                {!! Form::open(['route' => 'mantenance.units.store', 'files' => true]) !!}
+                {!! Form::hidden('user_id', auth()->user()->id) !!}
+                @include('dashboard.mantenance.units.partials.form')
+
+
+                <div class="flex justify-end">
+                    {!! Form::submit('Crear Nueva Unidad', ['class' => 'btn btn-primary cursor-pointer']) !!}
+                </div>
+
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+</x-app-layout>

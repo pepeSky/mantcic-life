@@ -17,12 +17,15 @@ class RoleSeeder extends Seeder
         $role = Role::create(['name' => 'Admin']);
         $role->permissions()->attach([1,2,3,4,5,6,7,8,9,10,11]);
 
-        $role = Role::create(['name' => 'Worker']);
+        $role = Role::create(['name' => 'Trabajador']);
         $role->permissions(['Crear Servicios', 'Leer Servicios', 'Actualizar Servicios', 'Eliminar Servicios']);
 
-        Role::create(['name' => 'Jobs']);
+        Role::create(['name' => 'Empleado']);
         $role->permissions(['Crear Servicios', 'Leer Servicios', 'Actualizar Servicios']);
 
-        Role::create(['name' => 'client']);
+        Role::create(['name' => 'Colaborador']);
+        $role->permissions(['Crear Servicios', 'Leer Servicios', 'Actualizar Servicios']);
+
+        Role::create(['name' => 'Cliente']);
     }
 }

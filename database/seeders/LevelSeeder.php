@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Level;
+use App\Models\Mantenance\Level;
 use Illuminate\Database\Seeder;
 
 class LevelSeeder extends Seeder
@@ -15,11 +15,11 @@ class LevelSeeder extends Seeder
     public function run()
     {
         Level::create([
-            "name" => "Nivel Básico"           
+            "name" => "Nivel Básico"
         ]);
 
         Level::create([
-            "name" => "Nivel Intermedio"   
+            "name" => "Nivel Intermedio"
         ]);
 
         Level::create([

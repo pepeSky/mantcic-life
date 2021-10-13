@@ -26,14 +26,14 @@ class UserSeeder extends Seeder
             'email' => 'oscar.riquelme@mantcic-life.cl',
             'password' => bcrypt('oscar2021')
         ]);
-        $user->assignRole('Worker');
+        $user->assignRole('Trabajador');
 
         User::create([
             'name' => 'Jaime Daniel Muñoz Leiva',
             'email' => 'jaime.munoz@mantcic-life.cl',
             'password' => bcrypt('jaime2021')
         ]);
-        $user->assignRole('Jobs');
+        $user->assignRole('Empleado');
 
         User::create([
             'name' => 'Mauricio Jose Farias Abarca',
@@ -52,6 +52,14 @@ class UserSeeder extends Seeder
             'email' => 'efren.rivas@mantcic-life.cl',
             'password' => bcrypt('efren2021')
         ]);
+
+        User::create([
+            'name' => 'Mario Silva Arroyo',
+            'email' => 'mario.silva@mantcic-life.cl',
+            'password' => bcrypt('mario2021')
+        ]);
+        $user->assignRole('Cliente');
+
 
         User::factory(40)->create();
     }

@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
-use App\Models\Tag;
+use App\Models\GestionPpSky\Category;
+use App\Models\GestionPpSky\Tag;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -30,7 +30,7 @@ class TagFactory extends Factory
         return [
 
             'name' => $name,
-            'slug' => Str::slug($name)          
+            'slug' => Str::slug($name)
         ];
     }
 }
