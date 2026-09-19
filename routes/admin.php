@@ -17,11 +17,11 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ServiceController;
 
 
-use App\Http\Controllers\Dashboard\Accounting\AccoutingController;
+use App\Http\Controllers\Dashboard\Accounting\AccountingController;
 
 Route::get('/', [AdminController::class, 'index'])->name('home');
 
-Route::resource('accouting', AccoutingController::class)->names('accouting');
+Route::resource('accouting', AccountingController::class)->names('accouting');
 Route::resource('roles', RoleController::class)->names('roles');
 Route::resource('users', UserController::class)->only(['index', 'edit', 'update'])->names('users');
 Route::get('services', [ServiceController::class, 'index'])->name('services.index');

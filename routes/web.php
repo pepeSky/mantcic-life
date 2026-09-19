@@ -4,6 +4,7 @@ use App\Http\Controllers\Welcome\WelcomeController;
 use App\Http\Controllers\Welcome\ServicesController;
 use App\Http\Controllers\Welcome\StoreController;
 use App\Http\Controllers\Welcome\ContactController;
+use App\Http\Controllers\Dashboard\Mantenance\ReportController;
 use App\Http\Livewire\ServiceStatus;
 use Illuminate\Support\Facades\Route;
 
