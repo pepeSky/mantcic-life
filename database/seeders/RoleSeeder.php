@@ -7,24 +7,44 @@ use Spatie\Permission\Models\Role;
 
 class RoleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $role = Role::create(['name' => 'Admin']);
-        $role->permissions()->attach([1,2,3,4,5,6,7,8,9,10,11]);
+        $role->givePermissionTo([
+            'Crear Servicios',
+            'Leer Servicios',
+            'Actualizar Servicios',
+            'Eliminar Servicios',
+            'Ver Panel Control',
+            'Crear Role',
+            'Listar Role',
+            'Editar Role',
+            'Eliminar Role',
+            'Leer Usuarios',
+            'Editar Usuarios',
+        ]);
 
         $role = Role::create(['name' => 'Trabajador']);
-        $role->permissions(['Crear Servicios', 'Leer Servicios', 'Actualizar Servicios', 'Eliminar Servicios']);
+        $role->givePermissionTo([
+            'Crear Servicios',
+            'Leer Servicios',
+            'Actualizar Servicios',
+            'Eliminar Servicios',
+        ]);
 
-        Role::create(['name' => 'Empleado']);
-        $role->permissions(['Crear Servicios', 'Leer Servicios', 'Actualizar Servicios']);
+        $role = Role::create(['name' => 'Empleado']);
+        $role->givePermissionTo([
+            'Crear Servicios',
+            'Leer Servicios',
+            'Actualizar Servicios',
+        ]);
 
-        Role::create(['name' => 'Colaborador']);
-        $role->permissions(['Crear Servicios', 'Leer Servicios', 'Actualizar Servicios']);
+        $role = Role::create(['name' => 'Colaborador']);
+        $role->givePermissionTo([
+            'Crear Servicios',
+            'Leer Servicios',
+            'Actualizar Servicios',
+        ]);
 
         Role::create(['name' => 'Cliente']);
     }

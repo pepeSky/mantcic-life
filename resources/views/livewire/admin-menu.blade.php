@@ -394,7 +394,7 @@
                     <form method="POST" action="{{ route('logout') }}"
                         class="relative flex flex-row items-center h-11 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                         @csrf
-                        <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <x-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
                             this.closest('form').submit();" class="h-11 w-full z-10">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -403,7 +403,7 @@
                                 </path>
                             </svg>
                             <a class="absolute ml-12 text-sm tracking-wide truncate">Cerrar Sesión</a>
-                        </x-jet-dropdown-link>
+                        </x-dropdown-link>
                     </form>
 
                 </li>

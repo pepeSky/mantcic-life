@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex flex-row">
             <div class="-mt-4">
-                <x-jet-application-mark/>
+                <x-application-mark/>
             </div>
         <h2 class="m-5 py-2 font-semibold text-xl align-middle text-gray-800 leading-tight">
             manTcic Life - "Manteniendo el ciclo de Vida"

@@ -17,50 +17,23 @@ class UserSeeder extends Seeder
         $user = User::create([
             'name' => 'Jose Fernando Riquelme Vergara',
             'email' => 'jose.riquelme@mantcic-life.cl',
-            'password' => bcrypt('ukeire2021')
+            'password' => bcrypt('ggjfrv2026')
         ]);
         $user->assignRole('Admin');
 
-        User::create([
-            'name' => 'Oscar Daniel Riquelme Vergara',
-            'email' => 'oscar.riquelme@mantcic-life.cl',
-            'password' => bcrypt('oscar2021')
+        $user = User::create([
+            'name' => 'Judith Alejandra Nuñez Donoso',
+            'email' => 'judith.nuñez@mantcic-life.cl',
+            'password' => bcrypt('judith2026')
         ]);
         $user->assignRole('Trabajador');
 
-        User::create([
-            'name' => 'Jaime Daniel Muñoz Leiva',
-            'email' => 'jaime.munoz@mantcic-life.cl',
-            'password' => bcrypt('jaime2021')
+        $user = User::create([
+            'name' => 'Nohemi Antonia Cifuentes Nuñez',
+            'email' => 'nohemi.antonia@mantcic-life.cl',
+            'password' => bcrypt('nohemi2026')
         ]);
         $user->assignRole('Empleado');
 
-        User::create([
-            'name' => 'Mauricio Jose Farias Abarca',
-            'email' => 'mauricio.farias@mantcic-life.cl',
-            'password' => bcrypt('mauricio2021')
-        ]);
-
-        User::create([
-            'name' => 'Luis Osvaldo Moya Abarca',
-            'email' => 'luis.moya@mantcic-life.cl',
-            'password' => bcrypt('luis2021')
-        ]);
-
-        User::create([
-            'name' => 'Efren Amaro Rivas Brana',
-            'email' => 'efren.rivas@mantcic-life.cl',
-            'password' => bcrypt('efren2021')
-        ]);
-
-        User::create([
-            'name' => 'Mario Silva Arroyo',
-            'email' => 'mario.silva@mantcic-life.cl',
-            'password' => bcrypt('mario2021')
-        ]);
-        $user->assignRole('Cliente');
-
-
-        User::factory(40)->create();
     }
 }
