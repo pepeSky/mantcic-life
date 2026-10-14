@@ -2,7 +2,7 @@
 
     @livewire('dashboard.navigation-menu')
 
-    @livewire('dashboard.worker.service-index')
+    @livewire('dashboard.mantenance.worker.service-index')
 
 
 

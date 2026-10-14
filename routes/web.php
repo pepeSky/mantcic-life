@@ -39,4 +39,8 @@ Route::get('reports', [ReportController::class, 'index'])->name('reports.index')
 
 Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
 
+Route::middleware(['auth'])->group(function () {
 
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
+
+});
